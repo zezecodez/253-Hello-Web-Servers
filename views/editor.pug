@@ -1,6 +1,4 @@
-extends layout
-
 block content
-  .preview-column
-    .display
-      h3 file-preview-text
+  .editor
+    textarea(:value="input", @input='update')
+        div(class='markedFile')
