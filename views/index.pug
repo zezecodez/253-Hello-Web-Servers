@@ -3,5 +3,8 @@ extends layout
 block content
   .main
     include sidebar.pug
-    include editor.pug
-    include preview.pug
+    .main-page
+      include header.pug
+      .input-output
+        include editor.pug
+        include preview.pug
