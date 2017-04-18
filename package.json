@@ -1,0 +1,27 @@
+{
+  "name": "253-Hello-Web-Servers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zezecodez/253-Hello-Web-Servers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zezecodez/253-Hello-Web-Servers/issues"
+  },
+  "homepage": "https://github.com/zezecodez/253-Hello-Web-Servers#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "pug": "^2.0.0-beta11"
+  }
+}
