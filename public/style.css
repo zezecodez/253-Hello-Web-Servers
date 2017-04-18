@@ -77,19 +77,27 @@
   height: 100vh;
 }
 
-.preview-column{
+textarea, .editor div{
   height: 90vh;
-  width: 100%;
-  border-width: 1px;
+  width: 99%;
+  /*border-width: 1px;
   border-color: gray;
-  border-style: solid;
-  display: flex;
-  flex-direction: column;
+  border-style: solid;*/
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
-.display{
-  height: 100vh;
-  text-align: left;
+textarea {
+  border: none;
+  border-right: 1px solid #ccc;
+  resize: none;
+  outline: none;
+  background-color: #f6f6f6;
+  font-size: 14;
+  font-family: 'Monaco', courier, monospace;
+  padding: 20px;
 }
 
 .side-header{

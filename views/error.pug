@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .main
+    include sidebar.pug
+    .main-page
+      include header.pug
+      .columns
+        include editor.pug
+        include preview.pug
+
+extends layout
+
+block content
+  .main
+    include sidebar.pug
+    include editor.pug
+    include preview.pug
+
+
+    .top-header-right
+      h3 im rocking the right!
+    .display-header
+      h3 PREVIEW
+
+      .top-header-left
+        h3 im rocking the left!
+      .display-header
+        h3 MARKDOWN
