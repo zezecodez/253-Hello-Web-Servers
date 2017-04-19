@@ -1,21 +1,43 @@
-
-// parser function
-var markedFile = function() {
- return marked(document.getElementById('editor').value);
-}
-function save() {
-  return 'inside save'
-  //does saving
+let updatePreview = () => {
+  let editorInput = document.getElementById('editor').value
+  let markdown = marked(editorInput)
+  document.querySelector('.preview').innerHTML = markdown
 }
 
-// document.querySelector('.preview-data').innerHTML = markedFile;
-window.onload = function () {
-  // document.querySelector('btn-class').addEventListener('click', save)
-  // document.querySelector('editor').addEventListener('input', markedFile)
+let save = () => {
+  let editorInput = document.getElementById('editor').value
+  fetch('/save', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'text/plain'
+    },
+    body: editorInput
+  })
+  .then((response) => {
+    return response.text()
+  })
+  .then(console.log)
+  .catch(console.log)
 }
-//get dom element
 
-//respond dom update
-// document.getElementById('editor').innerHTML = 'inside js file'
+let load = () => {
+  fetch('/load', {
+    method: 'get',
+    headers: {
+      'Content-Type': 'text/plain'
+    }
+  })
+  .then((response) => {
+      return response.text()
+  })
+  .then((response) => {
+    document.getElementById('editor').value = response
+    updatePreview()
+  })
+}
 
-console.log(document.querySelector('btn-class'));
+window.onload = () => {
+  document.getElementById('editor').addEventListener('input', updatePreview)
+  document.getElementById('save').addEventListener('click', save)
+  load()
+}

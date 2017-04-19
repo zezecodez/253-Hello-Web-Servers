@@ -1,12 +1,17 @@
 block content
-  .header-wrapper
-    .top-header-wrapper
-      .top-header-left
-        h3 example file name
-      .top-header-right
-        button.btn-class save
-    .bottom-header-wrapper
-      .bottom-header-left
-        h3 MARKDOWN
-      .bottom-header-right
-        h3 PREVIEW
+  .container-header
+    .navigation-header
+      h2 mmmarkdown
+      p a yummy markdown editor
+    .main-header
+      .file-info
+        .file-name
+          | ExampleFile.md
+        .word-count
+          | 138 words 
+          button#save(type = button) Save
+      .markdown-preview-header
+        .markdown-header
+          | MARKDOWN
+        .preview-header
+          | PREVIEW

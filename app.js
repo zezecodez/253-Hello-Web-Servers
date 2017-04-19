@@ -1,22 +1,38 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express')
+const bodyParser = require('body-parser')
+const http = require('http')
+const pug = require('pug')
+const fs = require('fs')
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+const app = express()
+const port = 3000
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.text())
+app.set('view engine', 'pug')
+app.set('views','views')
 
-app.use('/', function(request, response) {
-  console.log('inside the app')
-  response.render(
-    'index',
-    {title: '253-Hello-Web-Servers'})
+app.use(express.static('public'))
+
+app.get('/', (req, res) => {
+  res.render('Index')
 })
 
+app.post('/save', (req, res) => {
+ let writeStream = fs.createWriteStream('data/MARKDOWN.md')
+ writeStream.write(req.body)
+ writeStream.end()
+})
 
+app.get('/load', (req, res) => {
+   let str = ''
+  let readStream = fs.createReadStream('data/MARKDOWN.md')
+  readStream.on('data', (chunk) => {
+    str += chunk
+  }).on('end', () => {
+      res.send(str)
+  })
+})
 
-
-app.listen(3000, function() {
-  console.log('listening on --> port 3000')
+app.listen(port, () => {
+  console.log('Listening on port ' + port)
 })
