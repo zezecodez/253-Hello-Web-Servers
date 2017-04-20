@@ -24,7 +24,7 @@ app.post('/save', (req, res) => {
 })
 
 app.get('/load', (req, res) => {
-   let str = ''
+  let str = ''
   let readStream = fs.createReadStream('data/MARKDOWN.md')
   readStream.on('data', (chunk) => {
     str += chunk
