@@ -1,7 +1,22 @@
+let countWords = (string) => {
+  let words = string
+    .replace(/[^a-zA-Z0-9\s]/g, '')
+    .replace(/[\s]{2,}/g, ' ')
+    .replace(/^\s/g, '')
+    .replace(/\n/g, ' ')
+    .replace(/\s\s/g, ' ')
+    .replace(/\s$/g, '')
+    .split(' ')
+  if(words.length == 1 && words[0] == '')
+    return 0;
+  return words.length;
+}
+
 let updatePreview = () => {
-  let editorInput = document.getElementById('editor').value
+  let editorInput = document.getElementById("editor").value
   let markdown = marked(editorInput)
-  document.querySelector('.preview').innerHTML = markdown
+  document.querySelector(".preview").innerHTML = markdown
+  document.getElementById("words").innerHTML = countWords(editorInput)
 }
 
 let save = () => {
