@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  .main
-    include sidebar.pug
-    .main-page
-      include header.pug
-      .input-output
+  div.container
+    include header.pug  
+    div.container-body
+      include sidebar.pug
+      div.main-body
         include editor.pug
         include preview.pug

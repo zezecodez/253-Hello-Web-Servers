@@ -1,8 +1,11 @@
 block content
-  .side-bar
-    .side-header
-      h3 mmmarkdown
-      p a yummy markdown editor
-    .side-files
-      ul
-        .list-item
+
+  .navigation-body
+    ul.file-tree
+      each val in listOfFiles
+        li.file-tree-item
+          a(href= val) #{val}
+          if val != 'ExampleFile.md'
+            a(href= 'deleteFile?fileName=' + val)
+              i.fa.fa-trash(aria-hidden='true')
+    a#new-file(href='javascript:void(0)') New File +

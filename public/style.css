@@ -1,105 +1,80 @@
-
-.main{
-  text-align: center;
-  display: flex;
-  flex-direction: row;
+blockquote {
+  margin-left: .5em;
+  padding-left: 2em;
+  border-left: solid .5em lightgray;
 }
 
-.main-page{
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+.container {
+  border: solid 1px;
 }
 
-.input-output{
-  text-align: center;
-  display: flex;
-  flex-direction: row;
+.navigation-header, .main-header, .file-info {
+  border-bottom: solid 1px;
+}
+.markdown-header, .markdown, .navigation-header, .navigation-body {
+  border-right: solid 1px;
 }
 
-.header-wrapper{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+#new-file {
+  padding: 0.5em;
+  margin: 0;
 }
 
-.top-header-wrapper{
-  height: 5vh;
+.container-header, .markdown-preview-header, .container-body, .main-body, .main-header, .file-info {
   display: flex;
+  word-wrap: break-word;
 }
 
-.top-header-right{
-  width: 50%;
-  height: 5vh;
-  background-color: #222;
-  color: white;
+.word-count {
   text-align: right;
 }
-.top-header-left{
-  width: 50%;
-  height: 5vh;
-  background-color: #222;
-  color: white;
-  text-align: left;
-}
 
-.bottom-header-wrapper{
-  height: 5vh;
+.main-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.bottom-header-left{
-  width: 50%;
-  height: 5vh;
-  border-color: gray;
-  border-style: solid;
-  border-width: 1px;
-  text-align: left;
-}
-
-.bottom-header-right{
-  width: 50%;
-  height: 5vh;
-  border-color: gray;
-  border-style: solid;
-  border-width: 1px;
-  text-align: left;
-}
-
-.side-bar{
-  width: 20%;
-  border-width: 1px;
-  border-color: gray;
+.file-info {
   background-color: gray;
-  border-style: solid;
-  height: 100vh;
+}
+.file-tree-item {
+  margin-left: 0;
+  padding: .5em;
+  border-bottom: solid .2em gray;
 }
 
-textarea, .editor div{
-  height: 90vh;
-  width: 99%;
-  /*border-width: 1px;
-  border-color: gray;
-  border-style: solid;*/
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0 20px;
+.file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
+  width: 50%;
+}
+
+.file-info, .markdown-preview-header {
+  width: 100%;
+  height: 50%;
+}
+
+.navigation-body, .navigation-header, .navigation {
+  width: 20%;
+}
+
+.navigation-body {
+  height: 80vh;
+}
+
+.main-body, .main-header {
+  width: 80%;
+}
+
+.markdown {
+  white-space: pre-line;
+  font-family: monospace;
+  display: flex;
 }
 
 textarea {
-  border: none;
-  border-right: 1px solid #ccc;
-  resize: none;
-  outline: none;
-  background-color: #f6f6f6;
-  font-size: 14;
-  font-family: 'Monaco', courier, monospace;
-  padding: 20px;
+  width: 100%;
 }
 
-.side-header{
-  height: 10vh;
+.fa-trash {
+  float: right;
+  padding-right: .5em;
 }
