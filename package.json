@@ -20,6 +20,7 @@
   "homepage": "https://github.com/zezecodez/253-Hello-Web-Servers#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "jstransformer-marked": "^1.0.2",
     "lodash": "^4.17.4",
