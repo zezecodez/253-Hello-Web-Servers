@@ -15,6 +15,11 @@ blockquote {
   border-right: solid 1px;
 }
 
+#new-file {
+  padding: 0.5em;
+  margin: 0;
+}
+
 .container-header, .markdown-preview-header, .container-body, .main-body, .main-header, .file-info {
   display: flex;
   word-wrap: break-word;
@@ -31,6 +36,11 @@ blockquote {
 
 .file-info {
   background-color: gray;
+}
+.file-tree-item {
+  margin-left: 0;
+  padding: .5em;
+  border-bottom: solid .2em gray;
 }
 
 .file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
@@ -62,4 +72,9 @@ blockquote {
 
 textarea {
   width: 100%;
+}
+
+.fa-trash {
+  float: right;
+  padding-right: .5em;
 }

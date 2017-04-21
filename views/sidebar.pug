@@ -2,9 +2,10 @@ block content
 
   .navigation-body
     ul.file-tree
-      li Groceries.md
-      li Todos.md
-      li ExampleFile.md
-      li Blog.md
-      li Draft.md
-      button#newFile(type = button) New File
+      each val in listOfFiles
+        li.file-tree-item
+          a(href= val) #{val}
+          if val != 'ExampleFile.md'
+            a(href= 'deleteFile?fileName=' + val)
+              i.fa.fa-trash(aria-hidden='true')
+    a#new-file(href='javascript:void(0)') New File +

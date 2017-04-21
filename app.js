@@ -16,7 +16,7 @@ app.set('views','views')
 app.use(express.static('public'))
 
 app.post('/save', (req, res) => {
-    console.log(req.query.fileName);
+ console.log(req.query.fileName);
  let writeStream = fs.createWriteStream('./data/' + req.query.fileName)
  writeStream.write(req.body)
  writeStream.end()
@@ -36,8 +36,7 @@ app.get('/load', (req, res) => {
   })
 })
 
-app.get('/getFile', (req, res) => {
-  console.log(fileName);
+app.get('/newFile', (req, res) => {
   let fileName = req.query.fileName
   let writeStream = fs.createWriteStream('./data/' + fileName)
   writeStream.write(' ')
@@ -47,7 +46,7 @@ app.get('/getFile', (req, res) => {
 
 app.get('/deleteFile', (req, res) =>{
   let fileName = req.query.fileName
-  if (fileName != 'EXAMPLEFILE.md') {
+  if (fileName != 'READONLY.md') {
     fs.unlinkSync('./data/' + fileName)
   }
   res.redirect('/')
@@ -58,7 +57,7 @@ app.get('*', (req,res) => {
     if (req.cookies.lastEdited !== undefined) {
       res.redirect('/' + req.cookies.lastEdited)
     } else {
-      res.redirect('EXAMPLEFILE.md')
+      res.redirect('READONLY.md')
     }
   } else {
     fs.readdir('./data/', (error, files) => {
